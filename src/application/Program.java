@@ -15,6 +15,8 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		List<Gain> gain = new ArrayList<>();
 		
+		double x = 0;
+		String nameWin = null;
 		System.out.println("WELLCOME \n how many workers do you want file? ");
 		int n = sc.nextInt();
 		
@@ -31,10 +33,19 @@ public class Program {
 			
 		}
 		
+		System.out.println("\n-----------------------\n");
 		for(Gain g : gain) {
 			System.out.println(g.toString());
 		}
 		
+		for(Gain g : gain) {
+			if(g.valueGain() > x) {
+				x = g.valueGain();
+				nameWin = g.getName();
+			}
+		}
+		
+		System.out.printf("The worker that gain more is " + nameWin + " with R$ %.2f", x);
 		
 		sc.close();
 

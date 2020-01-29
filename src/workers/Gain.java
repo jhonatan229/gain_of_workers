@@ -39,4 +39,5 @@ public class Gain {
 	public String toString() {
 		return "worker: " + getName() + "   gain in week: R$ " + String.format("%.2f", valueGain());
 	}
+	
 }
